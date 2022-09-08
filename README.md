@@ -1,3 +1,7 @@
+# Please note:
+This Application uses rest Api to get data run its 2nd part spring boot app
+
+
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
