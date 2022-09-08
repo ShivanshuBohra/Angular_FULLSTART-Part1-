@@ -1,0 +1,13 @@
+<h1>Login</h1>
+<div class="container">
+  <div class="alert alert-warning" *ngIf="invalidLogin">
+    {{ invalidCredentialsMessage }}
+  </div>
+  <div>
+    Username : <input type="text" name="username" [(ngModel)]="username" />
+    <!-- below is example of Data binding through interpollation -->
+    <!-- Username : <input type="text" name="username" value="{{ username }}" /> -->
+    Password : <input type="password" name="password" [(ngModel)]="password" />
+    <button (click)="handleLogin()" class="btn btn-success">Login</button>
+  </div>
+</div>
