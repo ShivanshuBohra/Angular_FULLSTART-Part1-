@@ -8,6 +8,12 @@
     <!-- below is example of Data binding through interpollation -->
     <!-- Username : <input type="text" name="username" value="{{ username }}" /> -->
     Password : <input type="password" name="password" [(ngModel)]="password" />
+  </div>
+  <div>
     <button (click)="handleLogin()" class="btn btn-success">Login</button>
+    <div class="space"></div>
+    <button (click)="handleRegistration()" class="btn btn-success">
+      Register
+    </button>
   </div>
 </div>

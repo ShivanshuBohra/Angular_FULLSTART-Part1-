@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Route, Router } from "@angular/router";
 import { Todo } from "../list-todos/list-todos.component";
 import { TodoDataService } from "../service/data/todo-data.service";
+import { WelcomeComponent } from "../welcome/welcome.component";
 
 @Component({
   selector: "app-todos",
@@ -11,6 +12,7 @@ import { TodoDataService } from "../service/data/todo-data.service";
 export class TodosComponent implements OnInit {
   id: Number;
   todo: Todo;
+  username = sessionStorage.getItem("authenticateUser");
 
   constructor(
     private todoService: TodoDataService,
@@ -26,7 +28,7 @@ export class TodosComponent implements OnInit {
     } else {
       // only retrive data if id is not -1 , because -1 is set for new data post call
       this.todoService
-        .retriveTodo("Shivanshu", this.id)
+        .retriveTodo(this.username, this.id)
         .subscribe((data) => (this.todo = data));
     }
   }
@@ -35,12 +37,12 @@ export class TodosComponent implements OnInit {
     if (this.id == -1) {
       //if id =-1 , -1 is passed for new todo so create istead of update
       this.todoService
-        .createTodo("Shivanshu", this.todo)
+        .createTodo(this.todo)
         .subscribe((data) => this.router.navigate(["todos"]));
     } else {
       // only save data if id is not -1 , because -1 is set for new data post call
       this.todoService
-        .updateTodo("Shivanshu", this.id, this.todo)
+        .updateTodo(this.username, this.id, this.todo)
         .subscribe((data) => this.router.navigate(["todos"]));
     }
   }

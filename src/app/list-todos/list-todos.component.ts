@@ -32,6 +32,7 @@ export class ListTodosComponent implements OnInit {
 
   todos = [];
   message: String;
+  username = sessionStorage.getItem("authenticateUser");
 
   constructor(private todoService: TodoDataService, private router: Router) {}
 
@@ -41,7 +42,7 @@ export class ListTodosComponent implements OnInit {
 
   refreshTodos() {
     this.todoService
-      .retriveAllTodos("Shivanshu")
+      .retriveAllTodos(this.username)
       .subscribe((response) => (this.todos = response));
   }
   deleteTodo(id) {
