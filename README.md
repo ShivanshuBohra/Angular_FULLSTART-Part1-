@@ -1,3 +1,12 @@
+# Please note:
+This Application uses rest Api to get data run its 2nd part spring boot app(Backend_FULLSTACK_PART2)
+
+To run the application 
+1> Run the spring-boot application so the api response does not fail
+2>go to folder where angular folder is created and start terminal and launch app 
+Eg in document>workplace>fullstack>frontend>todo open terminal >> ng serve
+
+
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
