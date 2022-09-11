@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { TodoDataService } from "../service/data/todo-data.service";
 import { HardcodedAuthenticationService } from "../service/hardcoded-authentication.service";
 
 export class LoginDetails {
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
   //to use DI and use router add that in constructor ..
   constructor(
     private router: Router,
-    private hardcoadedAuthenticationService: HardcodedAuthenticationService
+    private hardcoadedAuthenticationService: HardcodedAuthenticationService,
+    private todoDataService: TodoDataService
   ) {}
 
   ngOnInit() {}
@@ -69,5 +71,18 @@ export class LoginComponent implements OnInit {
 
   handleRegistration() {
     this.router.navigate(["registration"]);
+  }
+
+  handlesubscription() {
+    var email = prompt(
+      "Please Enter the Email and confirm subscription through your email inbox. This is added to test SNS servives by AWS."
+    );
+    var filter =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (filter.test(email)) {
+      this.todoDataService
+        .sendEmailSubscriptionMail(email)
+        .subscribe((data) => window.alert(data));
+    }
   }
 }

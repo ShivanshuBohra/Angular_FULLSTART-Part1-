@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Todo } from "src/app/list-todos/list-todos.component";
 import { Session } from "protractor";
+import { text } from "@angular/core/src/render3";
 
 @Injectable({
   providedIn: "root",
@@ -79,6 +80,16 @@ export class TodoDataService {
 
       `http://mytodos-env.eba-53zdbfth.us-west-2.elasticbeanstalk.com/registerUser`,
       loginDetails
+    );
+  }
+
+  sendEmailSubscriptionMail(email) {
+    return this.http.get(
+      // ` http://localhost:5000/addSubscription/${email}`,
+      ` http://mytodos-env.eba-53zdbfth.us-west-2.elasticbeanstalk.com/addSubscription/${email}`,
+      {
+        responseType: "text" as "text",
+      }
     );
   }
 }
