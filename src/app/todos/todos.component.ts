@@ -37,7 +37,7 @@ export class TodosComponent implements OnInit {
     if (this.id == -1) {
       //if id =-1 , -1 is passed for new todo so create istead of update
       this.todoService
-        .createTodo(this.todo)
+        .createTodo(this.todo, this.username)
         .subscribe((data) => this.router.navigate(["todos"]));
     } else {
       // only save data if id is not -1 , because -1 is set for new data post call

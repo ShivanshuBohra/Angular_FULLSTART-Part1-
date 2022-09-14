@@ -85,4 +85,11 @@ export class LoginComponent implements OnInit {
         .subscribe((data) => window.alert(data));
     }
   }
+  aboutApp() {
+    console.log("about app");
+    window.open(
+      "/aboutApp",
+      "_blank" // <- This is what makes it open in a new window.
+    );
+  }
 }

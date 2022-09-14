@@ -1,24 +1,49 @@
-<h1>Login</h1>
-<div class="container">
-  <div class="alert alert-warning" *ngIf="invalidLogin">
-    {{ invalidCredentialsMessage }}
+<div class="space"></div>
+<div id="contact-area" class="mainDiv">
+  <div id="leftinfo" class="innerdivs">
+    <img src="assets/Images/SetGoalsImg.jpeg" />
   </div>
-  <div>
-    Username : <input type="text" name="username" [(ngModel)]="username" />
-    <!-- below is example of Data binding through interpollation -->
-    <!-- Username : <input type="text" name="username" value="{{ username }}" /> -->
-    Password : <input type="password" name="password" [(ngModel)]="password" />
-  </div>
-  <div>
-    <button (click)="handleLogin()" class="btn btn-success">Login</button>
-    <div class="space"></div>
-    <button (click)="handleRegistration()" class="btn btn-success">
-      Register
-    </button>
-    <div class="space"></div>
-    <div class="space"></div>
-    <button (click)="handlesubscription()" class="btn btn-success">
-      EMAIL SUBSCRIPTION
-    </button>
+
+  <div id="middleinfo" class="innerdivs">
+    <div class="container">
+      <div class="alert alert-warning" *ngIf="invalidLogin">
+        {{ invalidCredentialsMessage }}
+      </div>
+      <h1>Login Form</h1>
+      <form>
+        <div class="input-field">
+          <input type="text" name="username" [(ngModel)]="username" required />
+          <label> Username</label>
+        </div>
+        <div class="input-field">
+          <input
+            class="pswrd"
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+          <label>Password</label>
+        </div>
+        <div class="button">
+          <div class="inner"></div>
+          <button (click)="handleLogin()" class="btn btn-success">LOGIN</button>
+        </div>
+        <div class="button">
+          <div class="inner"></div>
+          <button (click)="handleRegistration()" class="btn btn-success">
+            Register
+          </button>
+        </div>
+        <button (click)="handlesubscription()" class="btn btn-success">
+          EMAIL SUBSCRIPTION
+        </button>
+        <div class="space"></div>
+        <div class="space"></div>
+        <button class="btn btn-success" (click)="aboutApp()">
+          About The App
+        </button>
+      </form>
+    </div>
   </div>
 </div>

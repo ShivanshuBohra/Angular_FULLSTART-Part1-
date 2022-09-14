@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { abort } from "process";
+import { AboutAppComponent } from "./about-app/about-app.component";
 import { ErrorComponent } from "./error/error.component";
 import { ListTodosComponent } from "./list-todos/list-todos.component";
 import { LoginComponent } from "./login/login.component";
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "registration", component: RegistrationComponent },
+  { path: "aboutApp", component: AboutAppComponent },
   { path: "termsAndConditions", component: TermsAndConditionsComponent },
   {
     path: "welcome",

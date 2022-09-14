@@ -66,10 +66,10 @@ export class TodoDataService {
     );
   }
 
-  createTodo(todo) {
+  createTodo(todo, username) {
     return this.http.post(
       //  ` http://localhost:5000/users/${this.username}/todos`,
-      `http://mytodos-env.eba-53zdbfth.us-west-2.elasticbeanstalk.com/users/${this.username}/todos`,
+      `http://mytodos-env.eba-53zdbfth.us-west-2.elasticbeanstalk.com/users/${username}/todos`,
       todo
     );
   }

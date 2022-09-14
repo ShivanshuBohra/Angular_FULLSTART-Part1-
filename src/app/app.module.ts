@@ -16,6 +16,7 @@ import { TodosComponent } from "./todos/todos.component";
 import { HttpIntercepterBasicAuthService } from "./service/http/http-intercepter-basic-auth.service";
 import { RegistrationComponent } from "./registration/registration.component";
 import { TermsAndConditionsComponent } from "./terms-and-conditions/terms-and-conditions.component";
+import { AboutAppComponent } from "./about-app/about-app.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TermsAndConditionsComponent } from "./terms-and-conditions/terms-and-co
     TodosComponent,
     RegistrationComponent,
     TermsAndConditionsComponent,
+    AboutAppComponent,
   ],
   imports: [
     BrowserModule,
